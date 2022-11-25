@@ -1,7 +1,7 @@
 'use strict';
 
 let lastScroll = 0;
-const defaultOffset = 0;
+const defaultOffset = 900;
 const headerEl = document.querySelector('#header');
 
 const scrollPosition = () => window.pageXOffset || document.documentElement.scrollTop;
@@ -15,6 +15,9 @@ window.addEventListener('scroll', () => {
     } else if (scrollPosition() < lastScroll && containHide()) {
         //scroll up
         headerEl.classList.remove('hide');
+        headerEl.classList.add('fixed');
+    } else if (scrollPosition() < defaultOffset) {
+        headerEl.classList.remove('fixed');
     }
 
     lastScroll = scrollPosition();
