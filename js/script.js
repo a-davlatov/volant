@@ -1,8 +1,10 @@
 'use strict';
 
 let lastScroll = 0;
-const defaultOffset = 900;
 const headerEl = document.querySelector('#header');
+const introEl = document.querySelector('#intro');
+let introElH = introEl.clientHeight;
+const defaultOffset = introElH;
 
 const scrollPosition = () => window.pageXOffset || document.documentElement.scrollTop;
 const containHide = () => headerEl.classList.contains('hide');
@@ -21,4 +23,8 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = scrollPosition();
+});
+
+window.addEventListener('load', () => {
+    document.querySelector('.intro__title').classList.add('_active');
 });
