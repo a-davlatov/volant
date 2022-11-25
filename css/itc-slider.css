@@ -27,8 +27,8 @@
 
 .itc-slider__item {
   padding-right: 10px;
-  flex: 0 0 33.3333333333%;
-  max-width: 33.3333333333%;
+  flex: 0 0 50%;
+  max-width: 50%;
   user-select: none;
   will-change: transform;
 }
