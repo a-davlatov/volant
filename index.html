@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/itc-slider.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=PT+Serif+Caption&family=Roboto&display=swap"
@@ -30,6 +30,9 @@
                         <a class="nav__link" href="#" data-scroll="news">Новости</a>
                     </nav>
                 </div>
+                <button class="burger" type="button" id="burger">
+                    <span class="burger__item">Menu</span>
+                </button>
                 <a class="contacts__phone contacts__phone--header" href="tel:4954606090">+7 (495) 460-60-90</a>
             </div>
         </div>
@@ -38,10 +41,10 @@
     <!-- Intro -->
     <section class="intro section" id="intro">
         <div class="container">
-            <div class="intro_inner">
+            <div class="intro__inner">
                 <h1 class="intro__title">Volant</h1>
                 <div class="intro__subtitle">Каменный диффузор</div>
-                <a href="#" class="btn">
+                <a href="#" class="btn btn--intro">
                     <span class="btn__label">
                         <span>Купить</span>
                         <span>Купить</span>
@@ -123,68 +126,127 @@
     <!-- Works -->
     <section class="section works">
         <div class="container">
-            <h2 class="section__title">Наши диффузоры</h2>
+            <h2 class="section__title section__title--works">Наши диффузоры</h2>
             <div class="works__inner">
-                <div class="works__item">
-                    <div class="works__icon">
-                        <img src="images/works/work1.jpg" alt="Диффузор White Stone" class="img">
+                <div class="itc-slider itc-slider-1" data-slider="itc-slider">
+                    <div class="itc-slider__wrapper">
+                        <div class="itc-slider__items">
+                            <div class="itc-slider__item">
+                                <!-- Контент 1 слайда -->
+                                <div class="works__item">
+                                    <div class="works__icon">
+                                        <img src="images/works/work1.jpg" alt="Диффузор White Stone" class="img">
+                                    </div>
+                                    <div class="works__content">
+                                        <div>
+                                            <h3 class="works__title">Диффузор White Stone</h3>
+                                            <div class="works__text">Керамическая поверхность матово-белого цвета - наш
+                                                самый популярный
+                                                диффузор эфирных масел. Диффузор, несомненно, впишется в ваш дом
+                                                благодаря своему
+                                                чистому и
+                                                неподвластному времени дизайну.</div>
+                                        </div>
+                                        <a href="#" class="btn__link">
+                                            Купить за 6499 ₽
+                                            <img src="images/diffuser/arrow.png" alt="arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="itc-slider__item">
+                                <!-- Контент 2 слайда -->
+                                <div class="works__item">
+                                    <div class="works__icon">
+                                        <img src="images/works/work2.jpg" alt="Диффузор Terracotta" class="img">
+                                    </div>
+                                    <div class="works__content">
+                                        <div>
+                                            <h3 class="works__title">Диффузор Terracotta</h3>
+                                            <div class="works__text">Керамическая поверхность из терракотовой глины
+                                                игрива и освещает
+                                                комнату своим присутствием. Разместите его отдельно или комбинируйте с
+                                                вашими любимыми
+                                                аксессуарами.</div>
+                                        </div>
+                                        <a href="#" class="btn__link">
+                                            Купить за 5499 ₽
+                                            <img src="images/diffuser/arrow.png" alt="arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="itc-slider__item">
+                                <!-- Контент 3 слайда -->
+                                <div class="works__item">
+                                    <div class="works__icon">
+                                        <img src="images/works/work3.jpg" alt="Диффузор  Grey Stone" class="img">
+                                    </div>
+                                    <div class="works__content">
+                                        <div>
+                                            <h3 class="works__title">Диффузор Grey Stone</h3>
+                                            <div class="works__text">Матово-серый цвет отличается изысканностью и
+                                                захватывающими
+                                                оттенками,
+                                                что делает его подходящим для любого помещения.</div>
+                                        </div>
+                                        <a href="#" class="btn__link">
+                                            Купить за 4499 ₽
+                                            <img src="images/diffuser/arrow.png" alt="arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="itc-slider__item">
+                                <!-- Контент 4 слайда -->
+                                <div class="works__item">
+                                    <div class="works__icon">
+                                        <img src="images/works/work4.jpg" alt="Диффузор Black Stone" class="img">
+                                    </div>
+                                    <div class="works__content">
+                                        <div>
+                                            <h3 class="works__title">Диффузор Black Stone</h3>
+                                            <div class="works__text">Керамическая отделка в матово-черном цвете - это
+                                                современная деталь
+                                                интерьера, которая может украсить любую комнату своим красивым
+                                                присутствием.</div>
+                                        </div>
+                                        <a href="#" class="btn__link">
+                                            Купить за 7050 ₽
+                                            <img src="images/diffuser/arrow.png" alt="arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="itc-slider__item">
+                                <!-- Контент 3 слайда -->
+                                <div class="works__item">
+                                    <div class="works__icon">
+                                        <img src="images/works/work3.jpg" alt="Диффузор  Grey Stone" class="img">
+                                    </div>
+                                    <div class="works__content">
+                                        <div>
+                                            <h3 class="works__title">Диффузор Grey Stone</h3>
+                                            <div class="works__text">Матово-серый цвет отличается изысканностью и
+                                                захватывающими
+                                                оттенками,
+                                                что делает его подходящим для любого помещения.</div>
+                                        </div>
+                                        <a href="#" class="btn__link">
+                                            Купить за 4499 ₽
+                                            <img src="images/diffuser/arrow.png" alt="arrow">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.itc-slider__wrapper -->
+                    <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+                    <div class="itc-slider__btn_group">
+                        <button class="itc-slider__btn itc-slider__btn_prev"></button>
+                        <button class="itc-slider__btn itc-slider__btn_next"></button>
                     </div>
-                    <div class="works__content">
-                        <h3 class="works__title">Диффузор White Stone</h3>
-                        <div class="works__text">Керамическая поверхность матово-белого цвета - наш самый популярный
-                            диффузор эфирных масел. Диффузор, несомненно, впишется в ваш дом благодаря своему чистому и
-                            неподвластному времени дизайну.</div>
-                        <a href="#" class="btn__link">
-                            Купить за 6499 ₽
-                            <img src="images/diffuser/arrow.png" alt="arrow">
-                        </a>
-                    </div>
-                </div>
-                <div class="works__item">
-                    <div class="works__icon">
-                        <img src="images/works/work2.jpg" alt="Диффузор Terracotta" class="img">
-                    </div>
-                    <div class="works__content">
-                        <h3 class="works__title">Диффузор Terracotta</h3>
-                        <div class="works__text">Керамическая поверхность матово-белого цвета - наш самый популярный
-                            диффузор эфирных масел. Диффузор, несомненно, впишется в ваш дом благодаря своему чистому и
-                            неподвластному времени дизайну.</div>
-                        <a href="#" class="btn__link">
-                            Купить за 5499 ₽
-                            <img src="images/diffuser/arrow.png" alt="arrow">
-                        </a>
-                    </div>
-                </div>
-                <div class="works__item">
-                    <div class="works__icon">
-                        <img src="images/works/work3.jpg" alt="Диффузор  Grey Stone" class="img">
-                    </div>
-                    <div class="works__content">
-                        <h3 class="works__title">Диффузор Grey Stone</h3>
-                        <div class="works__text">Керамическая поверхность матово-белого цвета - наш самый популярный
-                            диффузор эфирных масел. Диффузор, несомненно, впишется в ваш дом благодаря своему чистому и
-                            неподвластному времени дизайну.</div>
-                        <a href="#" class="btn__link">
-                            Купить за 4499 ₽
-                            <img src="images/diffuser/arrow.png" alt="arrow">
-                        </a>
-                    </div>
-                </div>
-                <div class="works__item">
-                    <div class="works__icon">
-                        <img src="images/works/work4.jpg" alt="Диффузор Black Stone" class="img">
-                    </div>
-                    <div class="works__content">
-                        <h3 class="works__title">Диффузор Black Stone</h3>
-                        <div class="works__text">Керамическая поверхность матово-белого цвета - наш самый популярный
-                            диффузор эфирных масел. Диффузор, несомненно, впишется в ваш дом благодаря своему чистому и
-                            неподвластному времени дизайну.</div>
-                        <a href="#" class="btn__link">
-                            Купить за 7050 ₽
-                            <img src="images/diffuser/arrow.png" alt="arrow">
-                        </a>
-                    </div>
-                </div>
+                </div><!-- /.itc-slider -->
             </div><!-- /.works__inner -->
         </div><!-- /.container -->
     </section><!-- /.works -->
@@ -194,7 +256,7 @@
         <div class="container">
             <h2 class="section__title">Новости</h2>
             <div class="news__inner">
-                <div class="itc-slider" data-slider="itc-slider" data-loop="true" data-autoplay="true"
+                <div class="itc-slider itc-slider-2" data-slider="itc-slider" data-autoplay="true"
                     data-interval="3000">
                     <div class="itc-slider__wrapper">
                         <div class="itc-slider__items">
@@ -317,6 +379,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal_response">
+		<div class="modal__dialog">
+			<button class="modal__close" data-close>
+				<img src="./img/cancel.png" alt="">
+			</button>
+			<video src="https://cdn.shopify.com/s/files/1/0535/9088/4510/t/3/assets/final-6286970450b56803e2e761fc-44035.mp4#t=0.5" controls width="595"></video>
+		</div>
+	</div>
 
     <script src="js/itc-slider.min.js"></script>
     <script src="js/script.js" defer></script>

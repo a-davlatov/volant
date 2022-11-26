@@ -25,10 +25,18 @@
   transition: none;
 }
 
-.itc-slider__item {
+.itc-slider-2 .itc-slider__item {
   padding-right: 10px;
   flex: 0 0 50%;
   max-width: 50%;
+  user-select: none;
+  will-change: transform;
+}
+
+.itc-slider-1 .itc-slider__item {
+  padding-right: 10px;
+  flex: 0 0 25%;
+  max-width: 25%;
   user-select: none;
   will-change: transform;
 }
@@ -41,6 +49,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.itc-slider-1 .itc-slider__btn_group {
+  display: none;
 }
 
 .itc-slider__btn {
