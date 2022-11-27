@@ -55,7 +55,7 @@
     </section>
 
     <!-- About -->
-    <section class="section about">
+    <section class="section about" id="about">
         <div class="container">
             <h2 class="section__title">Оазис для вашего дома</h2>
             <div class="about__inner">
@@ -80,7 +80,7 @@
     </section>
 
     <!-- Diffuser -->
-    <section class="section diffuser">
+    <section class="section diffuser" id="diffusers">
         <div class="container">
             <div class="diffuser__inner">
                 <div class="diffuser__content">
@@ -95,8 +95,9 @@
                         <img src="images/diffuser/arrow.png" alt="arrow">
                     </a>
                 </div>
-                <div class="diffuser__video">
-                    <img src="images/diffuser/diffuser.jpg" alt="Диффузор" class="img">
+                <div class="diffuser__video" id="diffuser_video">
+                    <!-- <img src="images/diffuser/diffuser.jpg" alt="Диффузор" class="img"> -->
+                    <img src="images/diffuser/play.png" alt="Play" class="diffuser__play">
                 </div>
             </div>
         </div>
@@ -252,7 +253,7 @@
     </section><!-- /.works -->
 
     <!-- News -->
-    <section class="section news">
+    <section class="section news" id="news">
         <div class="container">
             <h2 class="section__title">Новости</h2>
             <div class="news__inner">
@@ -381,10 +382,10 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal" id="modal_response">
+    <div class="modal" id="modal_video">
 		<div class="modal__dialog">
-			<button class="modal__close" data-close>
-				<img src="./img/cancel.png" alt="">
+			<button class="modal__close" id="modal-close">
+				<img src="images/diffuser/close.png" alt="Закрыть">
 			</button>
 			<video src="https://cdn.shopify.com/s/files/1/0535/9088/4510/t/3/assets/final-6286970450b56803e2e761fc-44035.mp4#t=0.5" controls width="595"></video>
 		</div>
