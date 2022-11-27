@@ -14,6 +14,7 @@ const defaultOffset = introElH;
 const scrollPosition = () => window.pageXOffset || document.documentElement.scrollTop;
 const containHide = () => headerEl.classList.contains('hide');
 
+// Fixed header
 window.addEventListener('scroll', () => {
 
     if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
@@ -88,6 +89,5 @@ document.querySelector('.modal__dialog').addEventListener('click', (evt) => {
     evt.stopPropagation();
 });
 
-window.addEventListener('load', () => {
-    document.querySelector('.intro__title').classList.add('_active');
-});
+// Animate intro title
+document.querySelector('.intro__title').classList.add('_active');
