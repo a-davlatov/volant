@@ -89,5 +89,4 @@ document.querySelector('.modal__dialog').addEventListener('click', (evt) => {
     evt.stopPropagation();
 });
 
-// Animate intro title
-document.querySelector('.intro__title').classList.add('_active');
+new WOW().init();

@@ -4,6 +4,7 @@ body {
     font-size: 16px;
     color: #131313;
     background: #fff;
+    overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -241,16 +242,7 @@ h6 {
     font-weight: 400;
     font-size: 172px;
     line-height: 1;
-    transform: translateY(120%);
-    transition: all .8s ease;
-    opacity: 0;
 }
-
-.intro__title._active {
-    transform: translateY(0);
-    opacity: 1;
-}
-
 
 .intro__subtitle {
     margin-bottom: 40px;
