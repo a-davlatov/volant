@@ -69,24 +69,34 @@ navLinks.forEach((el) => {
 
 
 // Show modal
+function showModal(evt) {
+    videoModalEl.classList.toggle('show');
+    bodyEl.classList.toggle('no-scroll');
+}
+
 diffuserEl.addEventListener('click', () => {
-    videoModalEl.classList.add('show');
-    bodyEl.classList.add('no-scroll');
+    showModal();
 });
 
 videoModalCloseEl.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    videoModalEl.classList.remove('show');
-    bodyEl.classList.remove('no-scroll');
+    showModal(evt);
 });
+
 videoModalEl.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    videoModalEl.classList.remove('show');
-    bodyEl.classList.remove('no-scroll');
+    showModal(evt);
 });
 
 document.querySelector('.modal__dialog').addEventListener('click', (evt) => {
     evt.stopPropagation();
 });
 
-new WOW().init();
+const wow = new WOW(
+    {
+        boxClass: 'wow',     
+        animateClass: 'animate__animated',
+        offset: 0,         
+        mobile: false,      
+        live: true       
+    }
+)
+wow.init();

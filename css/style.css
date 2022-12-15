@@ -199,6 +199,7 @@ h6 {
     display: inline-block;
     vertical-align: top;
     text-decoration: none;
+    text-transform: uppercase;
     color: inherit;
     position: relative;
 }
@@ -721,6 +722,7 @@ h6 {
 .form__link {
     padding-left: 5px;
     display: block;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .form__checkbox {
@@ -904,10 +906,6 @@ h6 {
         margin-top: 20px;
     }
 
-    /* .nav.show {
-        display: flex;
-    } */
-
     /* Burger */
     .burger {
         display: block;
@@ -984,16 +982,6 @@ h6 {
         top: -65px;
     }
 
-    .itc-slider-2 .itc-slider__item {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .itc-slider-1 .itc-slider__item {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
     /* Design */
     .design__inner {
         display: flex;
@@ -1040,10 +1028,12 @@ h6 {
 
 @media (max-width: 620px) {
 
+    /* Header */
     .header {
         padding: 10px 0;
     }
 
+    /* Intro */
     .intro {
         padding-top: 230px;
         height: 570px;
@@ -1053,10 +1043,12 @@ h6 {
         padding-bottom: 10px;
     }
 
+    /* Container */
     .container {
         padding: 0 10px;
     }
 
+    /* Btn */
     .btn {
         display: block;
         width: 100%;
@@ -1065,12 +1057,14 @@ h6 {
 
     .btn--intro {
         margin-top: 205px;
+        background: rgba(255, 255, 255, .5);
     }
 
     .btn--footer {
         margin-top: 60px;
     }
 
+    /* Section */
     .section__title {
         font-size: 26px;
     }
@@ -1083,6 +1077,7 @@ h6 {
         padding-right: 105px;
     }
 
+    /* About */
     .about__photos {
         flex-direction: column;
     }
@@ -1096,6 +1091,7 @@ h6 {
         padding-top: 10px;
     }
 
+    /* Footer */
     .footer {
         padding-top: 40px;
     }
@@ -1104,6 +1100,7 @@ h6 {
         margin-bottom: 40px;
     }
 
+    /* Form */
     .form__control {
         max-width: 100%;
     }
@@ -1112,15 +1109,18 @@ h6 {
         padding-top: 10px;
     }
 
+    /* Contacts */
     .contacts__phone--footer {
         padding-top: 20px;
     }
 
+    /* Diffuser */
     .diffuser__video {
         height: 200px;
         min-height: unset;
     }
 
+    /* Modal */
     .modal__dialog {
         width: 90%;
         height: auto;
@@ -1137,8 +1137,20 @@ h6 {
 
     }
     
+    /* Video */
     video {
         width: 100%;
         height: auto;
+    }
+
+    /* Itc-slider-2 */
+    .itc-slider-2 .itc-slider__item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .itc-slider-1 .itc-slider__item {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
