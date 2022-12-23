@@ -95,12 +95,12 @@
                             Отдохните от повседневного стресса и освободите место для отдыха.
                         </div>
                     </div>
-                    <a href="#" data-wow-delay=".4s" class="btn__link wow animate__animated animate__fadeInLeftBig">
+                    <a href="#" data-wow-delay=".4s" data-modal="modal_response" class="btn__link wow animate__animated animate__fadeInLeftBig">
                         Подробнее
                         <img src="images/diffuser/arrow.png" alt="arrow">
                     </a>
                 </div>
-                <div class="diffuser__video wow animate__animated animate__fadeInRightBig" id="diffuser_video">
+                <div class="diffuser__video wow animate__animated animate__fadeInRightBig" data-modal="diffuser_video">
                     <img src="images/diffuser/play.png" alt="Play" class="diffuser__play">
                 </div>
             </div>
@@ -155,7 +155,7 @@
                                                 чистому и
                                                 неподвластному времени дизайну.</div>
                                         </div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Купить за 6499 ₽
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -177,7 +177,7 @@
                                                 вашими любимыми
                                                 аксессуарами.</div>
                                         </div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Купить за 5499 ₽
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -198,7 +198,7 @@
                                                 оттенками,
                                                 что делает его подходящим для любого помещения.</div>
                                         </div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Купить за 4499 ₽
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -219,7 +219,7 @@
                                                 интерьера, которая может украсить любую комнату своим красивым
                                                 присутствием.</div>
                                         </div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Купить за 7050 ₽
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -240,7 +240,7 @@
                                                 оттенками,
                                                 что делает его подходящим для любого помещения.</div>
                                         </div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Купить за 4499 ₽
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -276,7 +276,7 @@
                                     <div class="news__content">
                                         <time class="news__date" datetime="2022-04-29 09:44">29.04.22</time>
                                         <div class="news__title">Наши диффузоры на ЭКСПО</div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Подробнее
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -293,7 +293,7 @@
                                     <div class="news__content">
                                         <time class="news__date" datetime="2022-04-25 13:44">25.04.22</time>
                                         <div class="news__title">Влияние арома масел на нервную систему</div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Подробнее
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -309,7 +309,7 @@
                                     <div class="news__content">
                                         <time class="news__date" datetime="2022-04-20 10:44">20.04.22</time>
                                         <div class="news__title">Йога с диффузором</div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Подробнее
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -326,7 +326,7 @@
                                     <div class="news__content">
                                         <time class="news__date" datetime="2022-04-25 13:44">25.04.22</time>
                                         <div class="news__title">Влияние арома масел на нервную систему</div>
-                                        <a href="#" class="btn__link">
+                                        <a href="#" class="btn__link" data-modal="modal_response">
                                             Подробнее
                                             <img src="images/diffuser/arrow.png" alt="arrow">
                                         </a>
@@ -396,7 +396,7 @@
     </footer>
 
     <!-- Modal -->
-    <div class="modal" id="modal_video">
+    <div class="modal" id="diffuser_video">
         <div class="modal__dialog">
             <button class="modal__close" id="modal-close">
                 <img src="images/diffuser/close.png" alt="Закрыть">
@@ -404,6 +404,17 @@
             <video
                 src="https://cdn.shopify.com/s/files/1/0535/9088/4510/t/3/assets/final-6286970450b56803e2e761fc-44035.mp4#t=0.5"
                 controls width="595"></video>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal_response">
+        <div class="modal__dialog modal__dialog--response">
+            <button class="modal__close">
+                <img src="images/diffuser/close.png" alt="Закрыть">
+            </button>
+            <h1 class="modal__title">Извените</h1>
+            <div class="modal__subtitle typing"></div>
         </div>
     </div>
 

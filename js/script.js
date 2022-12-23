@@ -4,9 +4,8 @@ let lastScroll = 0;
 const headerEl = document.querySelector('#header');
 const introEl = document.querySelector('#intro');
 const burgerEl = document.querySelector('#burger');
-const diffuserEl = document.querySelector('#diffuser_video');
-const videoModalEl = document.querySelector('#modal_video');
-const videoModalCloseEl = document.querySelector('#modal-close');
+const modalEls = document.querySelectorAll('.modal');
+const modalCloseEls = document.querySelectorAll('.modal__close');
 const bodyEl = document.body;
 let introElH = introEl.clientHeight;
 const defaultOffset = introElH;
@@ -69,26 +68,83 @@ navLinks.forEach((el) => {
 
 
 // Show modal
-function showModal(evt) {
-    videoModalEl.classList.toggle('show');
-    bodyEl.classList.toggle('no-scroll');
+const modalLinks = document.querySelectorAll('[data-modal]');
+modalLinks.forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        evt.preventDefault();
+
+        const elementId = el.dataset.modal;
+        const modalEl = document.getElementById(elementId);
+        modalEl.classList.add('show');
+        bodyEl.classList.add('no-scroll');
+    })
+});
+
+modalCloseEls.forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        el.closest('.modal').classList.remove('show');
+        bodyEl.classList.remove('no-scroll');
+    });
+});
+
+modalEls.forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        el.classList.remove('show');
+        bodyEl.classList.remove('no-scroll');
+    });
+});
+
+document.querySelectorAll('.modal__dialog').forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        evt.stopPropagation();
+    });
+});
+
+// Text typing effect
+var typeText = document.querySelector('.typing');
+var textToBeTypedArr = ['Эта страница на данный момент не доступна, попробуйте позже пожалуйста.', 'Страницы покупки товаров и описания товаров сейчас в стадии разработки', 'В ближайшее время данные страницы будут доступны'];
+var index = 0, isAdding = true, textToBeTypedIndex = 0;
+
+function playAnim() {
+    setTimeout(function () {
+        // set the text of typeText to a substring of the text to be typed using index.
+        typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index);
+        if (isAdding) {
+            // adding text
+            if (index > textToBeTypedArr[textToBeTypedIndex].length) {
+                // no more text to add
+                isAdding = false;
+                //break: wait 2s before playing again
+                // play cursor blink animation
+                typeText.classList.add('showAnim');
+                setTimeout(function () {
+                    // remove cursor blink animation
+                    typeText.classList.remove('showAnim');
+                    playAnim();
+                }, 2000);
+                return;
+            } else {
+                // increment index by 1
+                index++;
+            }
+        } else {
+            // removing text
+            if (index === 0) {
+                // no more text to remove
+                isAdding = true;
+                //switch to next text in text array
+                textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length;
+            } else {
+                // decrement index by 1
+                index--;
+            }
+        }
+        // call itself
+        playAnim();
+    }, isAdding ? 120 : 60);
 }
-
-diffuserEl.addEventListener('click', () => {
-    showModal();
-});
-
-videoModalCloseEl.addEventListener('click', (evt) => {
-    showModal(evt);
-});
-
-videoModalEl.addEventListener('click', (evt) => {
-    showModal(evt);
-});
-
-document.querySelector('.modal__dialog').addEventListener('click', (evt) => {
-    evt.stopPropagation();
-});
+// start animation
+playAnim();
 
 const wow = new WOW(
     {
