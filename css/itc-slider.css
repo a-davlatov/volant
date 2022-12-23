@@ -13,6 +13,8 @@
 
 .itc-slider__wrapper {
   overflow: hidden;
+  margin-right: -5px;
+  margin-left: -5px;
 }
 
 .itc-slider__items {
@@ -26,7 +28,6 @@
 }
 
 .itc-slider-2 .itc-slider__item {
-  padding-right: 10px;
   flex: 0 0 50%;
   max-width: 50%;
   user-select: none;
@@ -34,7 +35,6 @@
 }
 
 .itc-slider-1 .itc-slider__item {
-  padding-right: 10px;
   flex: 0 0 25%;
   max-width: 25%;
   user-select: none;
@@ -45,7 +45,7 @@
 .itc-slider__btn_group {
   position: absolute;
   top: -100px;
-  right: 10px;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
