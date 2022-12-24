@@ -915,7 +915,7 @@ h6 {
     /* Contacts */
     .contacts__phone--header {
         position: absolute;
-        bottom: 20px;
+        bottom: 40px;
         left: 20px;
         display: none;
     }
@@ -1103,7 +1103,6 @@ h6 {
 
     .btn--intro {
         margin-top: 205px;
-        background: rgba(255, 255, 255, .5);
     }
 
     .btn--footer {
