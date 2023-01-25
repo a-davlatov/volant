@@ -146,6 +146,12 @@ function playAnim() {
 // start animation
 playAnim();
 
+window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.preloader').style.display = 'none'
+    }, 1000)
+})
+
 const wow = new WOW(
     {
         boxClass: 'wow',     
