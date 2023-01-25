@@ -6,6 +6,51 @@
  * @license MIT (https://github.com/itchief/ui-components/blob/master/LICENSE)
  * @tutorial https://itchief.ru/javascript/slider
  */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.loading {
+  font-size: 56px;
+}
+
+.outer_loader {
+  margin-top: 10px;
+  width: 240px;
+  height: 4px;
+  background-color: lightgrey;
+}
+
+.inner_loader {
+  width: 70px;
+  height: 4px;
+  background-color: black;
+  animation: animation 2s infinite;
+}
+
+@keyframes animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(170px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 
 .itc-slider {
   position: relative;
@@ -100,31 +145,31 @@
   position: absolute;
   display: block;
   z-index: 1;
-  
+
   width: 10px;
   height: 10px;
   font-size: 0;
-	color: transparent;
+  color: transparent;
 
-	border: none;
-	border-top: 1px solid rgba(0 , 0, 0, .5);
-	border-left: 1px solid rgba(0, 0, 0, .5);
-	background: none;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, .5);
+  border-left: 1px solid rgba(0, 0, 0, .5);
+  background: none;
 
-	transition: border-color .2s linear;
+  transition: border-color .2s linear;
 }
 
 .itc-slider__btn_prev::before {
   top: 17px;
   right: 14px;
-  
-	transform: rotate(-45deg);
+
+  transform: rotate(-45deg);
 }
 
 .itc-slider__btn_next::before {
   top: 17px;
   left: 14px;
-	transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 
 /* индикаторы */

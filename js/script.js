@@ -148,17 +148,24 @@ playAnim();
 
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
-        document.querySelector('.preloader').style.display = 'none'
-    }, 1000)
+        document.querySelector('.preloader').style.display = 'none';
+    }, 1000);
 })
+
+// Load fonts after page load
+const loadLater = document.querySelector('.loadLater');
+const head = document.querySelector('head');
+if (loadLater && head) {
+    head.insertAdjacentHTML('beforeend', loadLater.innerHTML);
+}
 
 const wow = new WOW(
     {
-        boxClass: 'wow',     
+        boxClass: 'wow',
         animateClass: 'animate__animated',
-        offset: 0,         
-        mobile: false,      
-        live: true       
+        offset: 0,
+        mobile: false,
+        live: true
     }
 )
 wow.init();
