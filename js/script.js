@@ -152,13 +152,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 1000);
 })
 
-// Load fonts after page load
-const loadLater = document.querySelector('.loadLater');
-const head = document.querySelector('head');
-if (loadLater && head) {
-    head.insertAdjacentHTML('beforeend', loadLater.innerHTML);
-}
-
 const wow = new WOW(
     {
         boxClass: 'wow',

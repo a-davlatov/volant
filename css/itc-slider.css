@@ -6,51 +6,6 @@
  * @license MIT (https://github.com/itchief/ui-components/blob/master/LICENSE)
  * @tutorial https://itchief.ru/javascript/slider
  */
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-  flex-direction: column;
-  background-color: #fff;
-}
-
-.loading {
-  font-size: 56px;
-}
-
-.outer_loader {
-  margin-top: 10px;
-  width: 240px;
-  height: 4px;
-  background-color: lightgrey;
-}
-
-.inner_loader {
-  width: 70px;
-  height: 4px;
-  background-color: black;
-  animation: animation 2s infinite;
-}
-
-@keyframes animation {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(170px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
 
 .itc-slider {
   position: relative;
