@@ -710,6 +710,10 @@ h6 {
     border-color: rgba(255, 255, 255, .40);
 }
 
+.btn--footer-modal {
+    margin-top: 30px;
+}
+
 .btn--footer::before {
     background-color: #fff !important;
 }
@@ -897,6 +901,11 @@ h6 {
     padding: 50px 0 80px 0;
 }
 
+.form--modal {
+    padding: 0 20px;
+    width: 100%;
+}
+
 .form__group+.form__group {
     padding-top: 20px;
 }
@@ -918,6 +927,10 @@ h6 {
     font-size: inherit;
     font-weight: 400;
     color: rgba(255, 255, 255, .40);
+}
+
+.form__control:focus {
+    outline: none;
 }
 
 .form__label,
@@ -967,6 +980,26 @@ h6 {
 .form__checkbox:checked+label::before {
     border-color: rgba(255, 255, 255, .40);
     background-image: url("../images/footer/checked_icon.webp");
+}
+
+/* Error
+===============*/
+
+.error {
+    padding: 10px 0;
+    color: rgb(199, 43, 43);
+    font-size: 16px;
+    display: none;
+}
+
+/* Message
+===============*/
+
+.message {
+    padding: 10px 0;
+    color: #fff;
+    font-size: 16px;
+    display: none;
 }
 
 /* Modal
@@ -1328,6 +1361,10 @@ h6 {
 
     .btn--footer {
         margin-top: 60px;
+    }
+
+    .btn--footer-modal {
+        margin-top: 30px;
     }
 
     /* Section */

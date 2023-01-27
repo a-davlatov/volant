@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="image/x-icon" href="favicon.ico" rel="shortcut icon">
     <link rel="stylesheet" href="css/itc-slider.css">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=PT+Serif+Caption&family=Roboto&display=swap"
@@ -373,14 +373,17 @@
                 <div class="footer__item">
                     <h2 class="section__title section__title--footer">Остались вопросы? <br> Будем рады ответить</h2>
                     <form action="/" class="form">
+                        <div class="error"></div>
+                        <div class="message">Ваша заявка успешно отправлена</div>
                         <div class="form__group">
-                            <input type="text" class="form__control" placeholder="Имя">
+                            <input type="text" class="form__control name" name="name" placeholder="Имя">
                         </div>
                         <div class="form__group">
-                            <input type="text" class="form__control" placeholder="Телефон">
+                            <input type="text" class="form__control phone" name="phone" placeholder="Телефон">
                         </div>
                         <div class="form__group">
-                            <input type="checkbox" id="form__checkbox" class="form__checkbox">
+                            <input type="checkbox" name="personal-data" id="form__checkbox" class="form__checkbox"
+                                checked>
                             <label for="form__checkbox" class="form__label">
                                 Даю согласие на <a href="#" class="form__link">обработку персональных данных</a>
                             </label>
@@ -428,20 +431,42 @@
         </div>
     </div>
 
-    <!-- Modal -->
     <div class="modal" id="modal_response">
         <div class="modal__dialog modal__dialog--response">
             <button class="modal__close">
                 <img src="images/diffuser/close.webp" width="24" height="24" alt="Закрыть">
             </button>
-            <h1 class="modal__title">Извените</h1>
-            <div class="modal__subtitle typing"></div>
+            <h1 class="modal__title">Свяжитесь с нами</h1>
+            <div class="modal__subtitle">Оставьте заявку и наш специалист в ближайшее время свяжется с вами.</div>
+            <form action="/" class="form form--modal">
+                <div class="error"></div>
+                <div class="message">Ваша заявка успешно отправлена</div>
+                <div class="form__group">
+                    <input type="text" class="form__control name" name="name" placeholder="Имя">
+                </div>
+                <div class="form__group">
+                    <input type="text" class="form__control phone" name="phone" placeholder="Телефон">
+                </div>
+                <div class="form__group">
+                    <input type="checkbox" name="personal-data" id="form__checkbox1" class="form__checkbox">
+                    <label for="form__checkbox1" class="form__label">
+                        Даю согласие на <a href="#" class="form__link">обработку персональных данных</a>
+                    </label>
+                </div>
+
+                <button class="btn btn--footer btn--footer-modal" type="submit">
+                    <span class="btn__label btn__label--footer">
+                        <span>Оставить заявку</span>
+                        <span>Оставить заявку</span>
+                    </span>
+                </button>
+            </form>
         </div>
     </div>
 
     <script src="js/wow.min.js"></script>
     <script src="js/itc-slider.min.js"></script>
-    <script src="js/script.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

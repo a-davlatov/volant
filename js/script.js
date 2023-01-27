@@ -6,6 +6,7 @@ const introEl = document.querySelector('#intro');
 const burgerEl = document.querySelector('#burger');
 const modalEls = document.querySelectorAll('.modal');
 const modalCloseEls = document.querySelectorAll('.modal__close');
+const formEls = document.querySelectorAll('.form');
 const bodyEl = document.body;
 let introElH = introEl.clientHeight;
 const defaultOffset = introElH;
@@ -100,52 +101,6 @@ document.querySelectorAll('.modal__dialog').forEach((el) => {
     });
 });
 
-// Text typing effect
-var typeText = document.querySelector('.typing');
-var textToBeTypedArr = ['Эта страница на данный момент не доступна, попробуйте позже пожалуйста.', 'Страницы покупки товаров и описания товаров сейчас в стадии разработки', 'В ближайшее время данные страницы будут доступны'];
-var index = 0, isAdding = true, textToBeTypedIndex = 0;
-
-function playAnim() {
-    setTimeout(function () {
-        // set the text of typeText to a substring of the text to be typed using index.
-        typeText.innerText = textToBeTypedArr[textToBeTypedIndex].slice(0, index);
-        if (isAdding) {
-            // adding text
-            if (index > textToBeTypedArr[textToBeTypedIndex].length) {
-                // no more text to add
-                isAdding = false;
-                //break: wait 2s before playing again
-                // play cursor blink animation
-                typeText.classList.add('showAnim');
-                setTimeout(function () {
-                    // remove cursor blink animation
-                    typeText.classList.remove('showAnim');
-                    playAnim();
-                }, 2000);
-                return;
-            } else {
-                // increment index by 1
-                index++;
-            }
-        } else {
-            // removing text
-            if (index === 0) {
-                // no more text to remove
-                isAdding = true;
-                //switch to next text in text array
-                textToBeTypedIndex = (textToBeTypedIndex + 1) % textToBeTypedArr.length;
-            } else {
-                // decrement index by 1
-                index--;
-            }
-        }
-        // call itself
-        playAnim();
-    }, isAdding ? 120 : 60);
-}
-// start animation
-playAnim();
-
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.preloader').style.display = 'none';
@@ -162,3 +117,73 @@ const wow = new WOW(
     }
 )
 wow.init();
+
+function formValidation(form) {
+    const errorEl = form.querySelector('.error');
+
+    errorEl.style.display = 'none';
+    errorEl.textContent = '';
+
+    const nameEl = form.querySelector('.name');
+    const phoneEl = form.querySelector('.phone');
+
+    nameEl.style.borderColor = 'rgba(255, 255, 255, .40)';
+    phoneEl.style.borderColor = 'rgba(255, 255, 255, .40)';
+    const name = nameEl.value.trim();
+    const phone = phoneEl.value.trim();
+    const checkEl = form.querySelector('.form__checkbox');
+
+    if (name === '') {
+        errorEl.textContent = 'Заполните поле имя';
+        errorEl.style.display = 'block';
+        nameEl.style.borderColor = 'rgb(199, 43, 43)';
+        nameEl.focus();
+        return false;
+    }
+
+    if (phone === '') {
+        errorEl.textContent = 'Заполните поле телефон';
+        errorEl.style.display = 'block';
+        phoneEl.style.borderColor = 'rgb(199, 43, 43)';
+        phoneEl.focus();
+        return false;
+    }
+
+    if (!checkEl.checked) {
+        errorEl.textContent = 'Пожалуйста, дайте согласие на обработку ваших персональных данных';
+        errorEl.style.display = 'block';
+        checkEl.focus();
+        return false;
+    }
+
+    return true;
+}
+
+formEls.forEach((form) => {
+    form.addEventListener('submit', async (evt) => {
+        evt.preventDefault();
+
+        const messageEl = form.querySelector('.message');
+        const isValid = formValidation(form);
+        if (!isValid) {
+            return;
+        }
+
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: new FormData(form),
+        })
+            .catch((err) => {
+                throw err;
+            });
+
+        if (response.ok) {
+            messageEl.style.display = 'block';
+            setTimeout(() => {
+                messageEl.style.display = 'none';
+            }, 3000);
+        }
+
+        form.reset();
+    });
+});
