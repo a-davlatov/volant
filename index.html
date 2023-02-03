@@ -442,10 +442,10 @@
                 <div class="error"></div>
                 <div class="message">Ваша заявка успешно отправлена</div>
                 <div class="form__group">
-                    <input type="text" class="form__control name" name="name" placeholder="Имя">
+                    <input type="text" class="form__control name" name="name" placeholder="Имя" minlength="2" maxlength="30" pattern="[a-zA-Zа-яА-ЯёЁ]+">
                 </div>
                 <div class="form__group">
-                    <input type="text" class="form__control phone" name="phone" placeholder="Телефон">
+                    <input type="tel" autocomplete="off" maxlength="32" pattern="^\+7\s?[0-7|9]?[0-9]{2}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" class="form__control phone" name="phone" placeholder="Телефон">
                 </div>
                 <div class="form__group">
                     <input type="checkbox" name="personal-data" id="form__checkbox1" class="form__checkbox">
@@ -466,7 +466,7 @@
 
     <script src="js/wow.min.js"></script>
     <script src="js/itc-slider.min.js"></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/script.min.js"></script>
 </body>
 
 </html>

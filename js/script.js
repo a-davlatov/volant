@@ -162,12 +162,16 @@ function formValidation(form) {
 formEls.forEach((form) => {
     form.addEventListener('submit', async (evt) => {
         evt.preventDefault();
+        
 
         const messageEl = form.querySelector('.message');
+        const btnEl = form.querySelector('.btn');
         const isValid = formValidation(form);
         if (!isValid) {
             return;
         }
+
+        btnEl.disabled = true;
 
         let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
@@ -185,5 +189,6 @@ formEls.forEach((form) => {
         }
 
         form.reset();
+        btnEl.disabled = false;
     });
 });
