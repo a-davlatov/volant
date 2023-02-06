@@ -1432,6 +1432,7 @@ h6 {
     .modal__dialog--response {
         width: 95%;
         height: 80%;
+        min-height: 500px;
     }
 
     .modal__close {
