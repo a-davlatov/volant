@@ -166,12 +166,16 @@ formEls.forEach((form) => {
 
         const messageEl = form.querySelector('.message');
         const btnEl = form.querySelector('.btn');
+        const inputEls = form.querySelectorAll('input');
         const isValid = formValidation(form);
         if (!isValid) {
             return;
         }
 
         btnEl.disabled = true;
+        inputEls.forEach((el) => {
+            el.setAttribute('disabled', 'disabled');
+        });
 
         let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',

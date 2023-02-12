@@ -910,6 +910,10 @@ h6 {
     padding-top: 20px;
 }
 
+input:disabled {
+    color: #ccc;
+}
+
 .form__control {
     padding: 20px;
     width: 100%;
