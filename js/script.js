@@ -162,7 +162,6 @@ function formValidation(form) {
 formEls.forEach((form) => {
     form.addEventListener('submit', async (evt) => {
         evt.preventDefault();
-        
 
         const messageEl = form.querySelector('.message');
         const btnEl = form.querySelector('.btn');
@@ -173,26 +172,23 @@ formEls.forEach((form) => {
         }
 
         btnEl.disabled = true;
-        inputEls.forEach((el) => {
-            el.setAttribute('disabled', 'disabled');
-        });
+        inputEls.forEach(el => el.setAttribute('disabled', 'disabled'));
 
-        let response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        await fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: new FormData(form),
         })
+            .then(() => {
+                form.reset();
+                messageEl.style.display = 'block';
+                btnEl.disabled = false;
+                inputEls.forEach(el => el.removeAttribute('disabled'));
+                setTimeout(() => {
+                    messageEl.style.display = 'none';
+                }, 3000);
+            })
             .catch((err) => {
                 throw err;
             });
-
-        if (response.ok) {
-            messageEl.style.display = 'block';
-            setTimeout(() => {
-                messageEl.style.display = 'none';
-            }, 3000);
-        }
-
-        form.reset();
-        btnEl.disabled = false;
     });
 });
