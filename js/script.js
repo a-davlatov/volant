@@ -118,6 +118,11 @@ const wow = new WOW(
 )
 wow.init();
 
+// Form validation
+const telInputEls = document.querySelectorAll('input[type=tel]');
+const maskOptions = { mask: '+{7}(000)000-00-00' };
+telInputEls.forEach(el => IMask(el, maskOptions));
+
 function formValidation(form) {
     const errorEl = form.querySelector('.error');
 
@@ -159,6 +164,7 @@ function formValidation(form) {
     return true;
 }
 
+// Form submit
 formEls.forEach((form) => {
     form.addEventListener('submit', async (evt) => {
         evt.preventDefault();
